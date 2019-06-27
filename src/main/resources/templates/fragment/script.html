@@ -1,0 +1,26 @@
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('select').formSelect();
+    });
+
+    function changeLanguage(language) {
+        var currentUrl = location.pathname+location.search;
+        if (currentUrl.indexOf("?") == -1){
+            location.href = currentUrl+"?lang="+language;
+        }else {
+            if (currentUrl.indexOf("?lang") != -1) {
+                location.href = currentUrl.split("?lang", 1) + "?lang=" + language;
+            } else if (currentUrl.indexOf("&lang") != -1) {
+                location.href = currentUrl.split("&lang", 1) + "&lang=" + language;
+            }else {
+                location.href = currentUrl + "&lang=" + language;
+            }
+        }
+    }
+</script>
+
+

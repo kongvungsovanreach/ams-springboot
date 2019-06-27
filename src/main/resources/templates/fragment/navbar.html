@@ -1,0 +1,24 @@
+<div th:fragment="navbar">
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a onclick="changeLanguage('kh')">Khmer</a></li>
+        <li class="divider"></li>
+        <li><a onclick="changeLanguage('en')">English</a></li>
+    </ul>
+    <ul id="dropdown2" class="dropdown-content">
+        <li><a href="/addloop?loop=100">Add 100</a></li>
+        <li class="divider"></li>
+        <li><a href="/delete-all">Delete All</a></li>
+    </ul>
+    <nav id="header">
+        <div class="nav-wrapper">
+            <a style="padding-left: 20px;" href="/" class="brand-logo" th:text="#{article.managment.system}">Logo</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/" th:text="#{home}">Home</a></li>
+                <li><a href="/category" th:text="#{article.category}">Category</a></li>
+                <li><a href="/sw">API</a></li>
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown2" >Test Data<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1" ><span th:text="#{language}"></span><i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+        </div>
+    </nav>
+</div>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/main-layout}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{update.article}">Update Form</title>
+    <th:block th:insert="fragment/style"></th:block>
+    <th:block th:insert="fragment/script"></th:block>
+</head>
+<body>
+    <div layout:fragment="main-content">
+        <div class="col m8 offset-m2">
+            <form action="/update" th:method="post" enctype="multipart/form-data">
+                <br>
+                <div class="form-group">
+                    <a th:href="@{/viewall(page=${page})}"><input type="button" th:value="#{btn.back}" value="Cancel" class="btn btn-danger"></a>
+                    <input type="submit" th:value="#{btn.update}" class="btn btn-primary" style="float: right;">
+                </div>
+                <div class="input-field">
+                    <label for="id" th:text="#{article.id}">ID</label>
+                    <input type="text" th:field="${article.id}" class="form-control" readonly="readonly">
+                </div>
+                <div class="input-field">
+                    <label for="title" th:text="#{article.title}">Title</label><span class="error" th:errors="${article.title}"></span>
+                    <input type="text" th:field="${article.title}" class="form-control">
+                </div>
+                <div class="input-field">
+                    <span class="error" th:errors="${article.category}"></span>
+                    <select th:field="${article.category.id}" >
+                        <option value="0" disabled selected th:text="${#lists.size(categories)==0 ? 'No Category Create One.':'Choose Category'}"></option>
+                        <option th:each="category : ${categories}" th:object="${category}" th:value="*{id}" th:text="*{title}">label</option>
+                    </select>
+                </div>
+                <div class="input-field">
+                    <label for="author" th:text="#{article.author}">Author</label><span class="error" th:errors="${article.author}"></span>
+                    <input type="text" th:field="${article.author}" class="form-control">
+                </div>
+                <div class="input-field">
+                    <label for="description" th:text="#{article.description}">Description</label><span class="error" th:errors="${article.description}"></span>
+                    <input type="text" th:field="${article.description}" class="form-control">
+                </div>
+                <div class = "file-field input-field">
+                    <div class = "btn">
+                        <span>Browse</span>
+                        <input type = "file" name="image" id="file_input" onchange="previewFile()" />
+                    </div>
+
+                    <div class = "file-path-wrapper">
+                        <input class = "file-path validate" type = "text"
+                               placeholder = "Upload multiple files" />
+                    </div>
+                </div>
+                <img id="image" alt="" th:src="@{/img/{name}(name=${article.thumbnail})}" width="100%" >
+            </form>
+        </div>
+    </div>
+    <script layout:fragment="main-script">
+        function previewFile() {
+            var preview = document.querySelector('img');
+            var file    = document.querySelector('input[type=file]').files[0];
+            var reader  = new FileReader();
+            reader.onloadend = function () {
+                preview.src = reader.result;
+            }
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "";
+            }
+        }
+    </script>
+</body>
+</html>

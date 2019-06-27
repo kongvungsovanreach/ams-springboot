@@ -1,0 +1,981 @@
+2019-06-14 14:51:04.095  INFO 18560 --- [main] c.k.btb.holymomo.HolymomoApplication     : Starting HolymomoApplication on Kong-Vungsovanreach.local with PID 18560 (started by kongvungsovanreach in /Users/kongvungsovanreach/Documents/Project/Spring Project/HolyMoMoV2)
+2019-06-14 14:51:04.097  INFO 18560 --- [main] c.k.btb.holymomo.HolymomoApplication     : The following profiles are active: localDB
+2019-06-14 14:51:05.062  INFO 18560 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-06-14 14:51:05.062  INFO 18560 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-06-14 14:51:05.119  INFO 18560 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-06-14 14:51:05.684  INFO 18560 --- [main] c.k.btb.holymomo.HolymomoApplication     : Started HolymomoApplication in 1.876 seconds (JVM running for 2.415)
+2019-06-14 14:51:13.404  INFO 18560 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-06-14 14:51:13.750  WARN 18560 --- [http-nio-8080-exec-1] n.n.u.t.expressions.ExpressionProcessor  : Fragment expression "layout/main-layout" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.
+2019-06-14 14:51:13.944  WARN 18560 --- [http-nio-8080-exec-1] n.n.u.t.d.TitlePatternProcessor          : The $DECORATOR_TITLE token is deprecated and will be removed in the next major version of the layout dialect.  Please use the $LAYOUT_TITLE token instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
+2019-06-14 14:52:06.364  INFO 18711 --- [main] c.k.btb.holymomo.HolymomoApplication     : Starting HolymomoApplication on Kong-Vungsovanreach.local with PID 18711 (started by kongvungsovanreach in /Users/kongvungsovanreach/Documents/Project/Spring Project/HolyMoMoV2)
+2019-06-14 14:52:06.365  INFO 18711 --- [main] c.k.btb.holymomo.HolymomoApplication     : The following profiles are active: localDB
+2019-06-14 14:52:07.327  INFO 18711 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-06-14 14:52:07.327  INFO 18711 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-06-14 14:52:07.389  INFO 18711 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-06-14 14:52:08.035  INFO 18711 --- [main] c.k.btb.holymomo.HolymomoApplication     : Started HolymomoApplication in 1.907 seconds (JVM running for 2.274)
+2019-06-14 14:52:13.473  INFO 18711 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-06-14 14:52:13.548 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 14:52:13.559 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 14:52:13.571 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 14:52:13.583 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 14:52:13.584 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 1(Integer), 10(Integer)
+2019-06-14 14:52:13.589 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 14:52:13.594 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 14:52:13.594 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 14:52:13.596 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 14:52:13.601 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 14:52:13.602 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 14:52:13.604 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 14:52:13.866  WARN 18711 --- [http-nio-8080-exec-1] n.n.u.t.expressions.ExpressionProcessor  : Fragment expression "layout/main-layout" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.
+2019-06-14 14:52:14.057  WARN 18711 --- [http-nio-8080-exec-1] n.n.u.t.d.TitlePatternProcessor          : The $DECORATOR_TITLE token is deprecated and will be removed in the next major version of the layout dialect.  Please use the $LAYOUT_TITLE token instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
+2019-06-14 17:36:49.950 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:36:49.950 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:36:49.952 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:36:49.957 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:36:49.958 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 1(Integer), 10(Integer)
+2019-06-14 17:36:49.962 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:36:49.967 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:36:49.968 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:36:49.970 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:36:49.975 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:36:49.975 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:36:49.977 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:37:05.594 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.A.findOneById                : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.id = ?) 
+2019-06-14 17:37:05.595 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.A.findOneById                : ==> Parameters: 1(Integer)
+2019-06-14 17:37:05.597 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.A.findOneById                : <==      Total: 1
+2019-06-14 17:38:10.397 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:38:10.397 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:38:10.399 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:38:10.405 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:38:10.405 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 1(Integer), 10(Integer)
+2019-06-14 17:38:10.408 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:38:10.413 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:38:10.413 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:38:10.415 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:38:10.420 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:38:10.420 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:38:10.422 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:38:20.008 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:38:20.008 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: kaka(String), 1(Integer)
+2019-06-14 17:38:20.011 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:38:20.016 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:38:20.017 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: kaka(String), 1(Integer), 10(Integer), 1(Integer), 10(Integer)
+2019-06-14 17:38:20.020 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:38:20.025 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:38:20.026 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: kaka(String), 1(Integer)
+2019-06-14 17:38:20.029 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:38:20.034 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:38:20.034 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:38:20.036 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:38:22.261 DEBUG 18711 --- [http-nio-8080-exec-8] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:38:22.262 DEBUG 18711 --- [http-nio-8080-exec-8] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: kaka(String), 1(Integer)
+2019-06-14 17:38:22.264 DEBUG 18711 --- [http-nio-8080-exec-8] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:38:22.269 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:38:22.269 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: kaka(String), 1(Integer), 10(Integer), 2(Integer), 10(Integer)
+2019-06-14 17:38:22.272 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.A.viewPagination             : <==      Total: 3
+2019-06-14 17:38:22.277 DEBUG 18711 --- [http-nio-8080-exec-8] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:38:22.277 DEBUG 18711 --- [http-nio-8080-exec-8] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: kaka(String), 1(Integer)
+2019-06-14 17:38:22.279 DEBUG 18711 --- [http-nio-8080-exec-8] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:38:22.284 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:38:22.284 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:38:22.286 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:38:24.522 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:38:24.523 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:38:24.524 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:38:24.530 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:38:24.530 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 1(Integer), 10(Integer)
+2019-06-14 17:38:24.533 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:38:24.537 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:38:24.538 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:38:24.539 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:38:24.544 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:38:24.544 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:38:24.546 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:38:28.892 DEBUG 18711 --- [http-nio-8080-exec-10] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:38:28.892 DEBUG 18711 --- [http-nio-8080-exec-10] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: kaka(String), 1(Integer)
+2019-06-14 17:38:28.894 DEBUG 18711 --- [http-nio-8080-exec-10] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:38:28.900 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:38:28.900 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: kaka(String), 1(Integer), 10(Integer), 1(Integer), 10(Integer)
+2019-06-14 17:38:28.903 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:38:28.908 DEBUG 18711 --- [http-nio-8080-exec-10] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:38:28.908 DEBUG 18711 --- [http-nio-8080-exec-10] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: kaka(String), 1(Integer)
+2019-06-14 17:38:28.911 DEBUG 18711 --- [http-nio-8080-exec-10] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:38:28.916 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:38:28.916 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:38:28.918 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:38:35.129 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:38:35.129 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: love(String), 1(Integer)
+2019-06-14 17:38:35.131 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:38:35.136 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:38:35.137 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: love(String), 1(Integer), 10(Integer), 1(Integer), 10(Integer)
+2019-06-14 17:38:35.140 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:38:35.145 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:38:35.145 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: love(String), 1(Integer)
+2019-06-14 17:38:35.147 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:38:35.152 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:38:35.152 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:38:35.154 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:38:42.973 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:38:42.974 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: love(String), 1(Integer)
+2019-06-14 17:38:42.976 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:38:42.981 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:38:42.981 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: love(String), 1(Integer), 10(Integer), 4(Integer), 10(Integer)
+2019-06-14 17:38:42.984 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:38:42.989 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:38:42.989 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: love(String), 1(Integer)
+2019-06-14 17:38:42.991 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:38:42.997 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:38:42.997 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:38:42.999 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:38:47.908 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:38:47.908 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: (String), 1(Integer)
+2019-06-14 17:38:47.910 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:38:47.915 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:38:47.915 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: (String), 1(Integer), 10(Integer), 1(Integer), 10(Integer)
+2019-06-14 17:38:47.918 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:38:47.923 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:38:47.923 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: (String), 1(Integer)
+2019-06-14 17:38:47.925 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:38:47.930 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:38:47.930 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:38:47.931 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:45:29.218 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:45:29.218 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:45:29.220 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:45:29.225 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:45:29.225 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 1(Integer), 10(Integer)
+2019-06-14 17:45:29.227 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:45:29.232 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:45:29.232 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:45:29.234 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:45:29.239 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:45:29.239 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:45:29.241 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:45:38.057 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:45:38.057 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: kaka(String), 1(Integer)
+2019-06-14 17:45:38.059 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:45:38.064 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:45:38.064 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: kaka(String), 1(Integer), 10(Integer), 1(Integer), 10(Integer)
+2019-06-14 17:45:38.067 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:45:38.072 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:45:38.072 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: kaka(String), 1(Integer)
+2019-06-14 17:45:38.074 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:45:38.079 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:45:38.079 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:45:38.080 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:45:44.533 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:45:44.533 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: kaka(String), 1(Integer)
+2019-06-14 17:45:44.535 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:45:44.540 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:45:44.540 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: kaka(String), 1(Integer), 10(Integer), 2(Integer), 10(Integer)
+2019-06-14 17:45:44.543 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.A.viewPagination             : <==      Total: 3
+2019-06-14 17:45:44.548 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:45:44.548 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: kaka(String), 1(Integer)
+2019-06-14 17:45:44.550 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:45:44.554 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:45:44.555 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:45:44.556 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:45:46.134 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.ArticleRepository.delete     : ==>  Preparing: DELETE FROM tb_articles WHERE (id = ?) 
+2019-06-14 17:45:46.135 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.ArticleRepository.delete     : ==> Parameters: 49(Integer)
+2019-06-14 17:45:46.136 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.ArticleRepository.delete     : <==    Updates: 1
+2019-06-14 17:45:46.150 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:45:46.150 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: kaka(String), 1(Integer)
+2019-06-14 17:45:46.152 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:45:46.158 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:45:46.158 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: kaka(String), 1(Integer), 10(Integer), 2(Integer), 10(Integer)
+2019-06-14 17:45:46.160 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.A.viewPagination             : <==      Total: 2
+2019-06-14 17:45:46.165 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:45:46.165 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: kaka(String), 1(Integer)
+2019-06-14 17:45:46.167 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:45:46.172 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:45:46.172 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:45:46.173 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:45:54.350 DEBUG 18711 --- [http-nio-8080-exec-10] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:45:54.350 DEBUG 18711 --- [http-nio-8080-exec-10] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:45:54.352 DEBUG 18711 --- [http-nio-8080-exec-10] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:45:54.357 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:45:54.357 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 1(Integer), 10(Integer)
+2019-06-14 17:45:54.359 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:45:54.364 DEBUG 18711 --- [http-nio-8080-exec-10] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:45:54.364 DEBUG 18711 --- [http-nio-8080-exec-10] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:45:54.366 DEBUG 18711 --- [http-nio-8080-exec-10] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:45:54.371 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:45:54.371 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:45:54.372 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:45:59.582 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:45:59.582 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:45:59.584 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:45:59.591 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:45:59.591 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 5(Integer), 10(Integer)
+2019-06-14 17:45:59.593 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:45:59.598 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:45:59.598 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:45:59.600 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:45:59.605 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:45:59.605 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:45:59.606 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:46:01.047 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.ArticleRepository.delete     : ==>  Preparing: DELETE FROM tb_articles WHERE (id = ?) 
+2019-06-14 17:46:01.047 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.ArticleRepository.delete     : ==> Parameters: 42(Integer)
+2019-06-14 17:46:01.049 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.ArticleRepository.delete     : <==    Updates: 1
+2019-06-14 17:46:01.059 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:46:01.059 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:46:01.061 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:46:01.065 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:46:01.066 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 5(Integer), 10(Integer)
+2019-06-14 17:46:01.068 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:46:01.072 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:46:01.072 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:46:01.074 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:46:01.079 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:46:01.079 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:46:01.080 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:46:04.543 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.ArticleRepository.delete     : ==>  Preparing: DELETE FROM tb_articles WHERE (id = ?) 
+2019-06-14 17:46:04.543 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.ArticleRepository.delete     : ==> Parameters: 43(Integer)
+2019-06-14 17:46:04.545 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.ArticleRepository.delete     : <==    Updates: 1
+2019-06-14 17:46:04.556 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:46:04.556 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:46:04.558 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:46:04.562 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:46:04.562 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 5(Integer), 10(Integer)
+2019-06-14 17:46:04.565 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:46:04.569 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:46:04.569 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:46:04.571 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:46:04.576 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:46:04.576 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:46:04.577 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:47:14.030 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%') 
+2019-06-14 17:47:14.030 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: ik(String)
+2019-06-14 17:47:14.032 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:47:14.037 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%') ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:47:14.037 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: ik(String), 10(Integer), 1(Integer), 10(Integer)
+2019-06-14 17:47:14.039 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.A.viewPagination             : <==      Total: 0
+2019-06-14 17:47:14.044 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%') 
+2019-06-14 17:47:14.044 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: ik(String)
+2019-06-14 17:47:14.046 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:47:14.050 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:47:14.050 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:47:14.052 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:48:02.612 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:48:02.612 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:48:02.613 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:48:52.257 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:48:52.258 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:48:52.260 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:48:52.267 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:48:52.267 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 1(Integer), 10(Integer)
+2019-06-14 17:48:52.270 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:48:52.276 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:48:52.276 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:48:52.278 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:48:52.285 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:48:52.285 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:48:52.287 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:49:12.121 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:49:12.121 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:49:12.122 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:49:12.127 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:49:12.128 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 1(Integer), 10(Integer)
+2019-06-14 17:49:12.130 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:49:12.134 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:49:12.134 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:49:12.136 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:49:12.141 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:49:12.141 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:49:12.142 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:49:21.054 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:49:21.054 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:49:21.056 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:49:21.061 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:49:21.062 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 4(Integer), 10(Integer)
+2019-06-14 17:49:21.064 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:49:21.069 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:49:21.069 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:49:21.070 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:49:21.075 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:49:21.075 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:49:21.077 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:49:22.751 DEBUG 18711 --- [http-nio-8080-exec-4] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:49:22.751 DEBUG 18711 --- [http-nio-8080-exec-4] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:49:22.753 DEBUG 18711 --- [http-nio-8080-exec-4] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:49:22.759 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:49:22.759 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 6(Integer), 10(Integer)
+2019-06-14 17:49:22.761 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:49:22.767 DEBUG 18711 --- [http-nio-8080-exec-4] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:49:22.768 DEBUG 18711 --- [http-nio-8080-exec-4] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:49:22.771 DEBUG 18711 --- [http-nio-8080-exec-4] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:49:22.779 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:49:22.779 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:49:22.781 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:49:24.757 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:49:24.757 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:49:24.759 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:49:24.765 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:49:24.766 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 8(Integer), 10(Integer)
+2019-06-14 17:49:24.768 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:49:24.775 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:49:24.775 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:49:24.778 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:49:24.785 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:49:24.786 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:49:24.787 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:49:29.222 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:49:29.222 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:49:29.225 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:49:29.230 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:49:29.231 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 9(Integer), 10(Integer)
+2019-06-14 17:49:29.234 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.A.viewPagination             : <==      Total: 7
+2019-06-14 17:49:29.240 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:49:29.240 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:49:29.242 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:49:29.249 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:49:29.249 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:49:29.251 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 9
+2019-06-14 17:51:55.798 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.A.clearSeqArticle            : ==>  Preparing: ALTER SEQUENCE tb_articles_id_seq RESTART WITH 1 
+2019-06-14 17:51:55.798 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.A.clearSeqArticle            : ==> Parameters: 
+2019-06-14 17:51:55.802 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.A.clearSeqArticle            : <==    Updates: 0
+2019-06-14 17:51:55.806 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.A.clearSeqCategory           : ==>  Preparing: ALTER SEQUENCE tb_categories_id_seq RESTART WITH 1 
+2019-06-14 17:51:55.807 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.A.clearSeqCategory           : ==> Parameters: 
+2019-06-14 17:51:55.809 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.A.clearSeqCategory           : <==    Updates: 0
+2019-06-14 17:51:55.814 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.ArticleRepository.deleteAll  : ==>  Preparing: DELETE FROM tb_articles 
+2019-06-14 17:51:55.814 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.ArticleRepository.deleteAll  : ==> Parameters: 
+2019-06-14 17:51:55.815 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.ArticleRepository.deleteAll  : <==    Updates: 87
+2019-06-14 17:51:55.820 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.C.deleteAll                  : ==>  Preparing: DELETE FROM tb_categories 
+2019-06-14 17:51:55.820 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.C.deleteAll                  : ==> Parameters: 
+2019-06-14 17:51:55.822 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.C.deleteAll                  : <==    Updates: 9
+2019-06-14 17:51:55.831 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:51:55.831 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:51:55.833 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:51:55.838 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:51:55.839 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 1(Integer), 10(Integer)
+2019-06-14 17:51:55.841 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.A.viewPagination             : <==      Total: 0
+2019-06-14 17:51:55.846 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:51:55.846 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:51:55.848 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:51:55.853 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:51:55.853 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:51:55.854 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 0
+2019-06-14 17:51:57.155 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.add       : ==>  Preparing: INSERT INTO tb_categories(title) VALUES(?) 
+2019-06-14 17:51:57.155 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.add       : ==> Parameters: Romanticism(String)
+2019-06-14 17:51:57.157 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.add       : <==    Updates: 1
+2019-06-14 17:51:57.161 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.add       : ==>  Preparing: INSERT INTO tb_categories(title) VALUES(?) 
+2019-06-14 17:51:57.162 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.add       : ==> Parameters: Novelism(String)
+2019-06-14 17:51:57.163 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.add       : <==    Updates: 1
+2019-06-14 17:51:57.167 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.add       : ==>  Preparing: INSERT INTO tb_categories(title) VALUES(?) 
+2019-06-14 17:51:57.167 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.add       : ==> Parameters: Dramalism(String)
+2019-06-14 17:51:57.169 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.add       : <==    Updates: 1
+2019-06-14 17:51:57.173 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.173 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.175 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.180 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.findAll    : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:51:57.180 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.findAll    : ==> Parameters: 
+2019-06-14 17:51:57.181 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.findAll    : <==      Total: 0
+2019-06-14 17:51:57.186 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.187 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.188 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.193 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.193 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.196 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.201 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.201 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.203 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.208 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.208 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.209 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.214 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.214 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.215 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.220 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.220 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.222 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.227 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.227 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.228 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.233 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.233 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.235 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.239 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.240 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.241 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.246 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.246 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.248 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.253 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.253 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.255 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.259 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.259 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.261 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.266 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.266 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.267 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.272 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.272 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.274 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.279 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.279 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.280 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.285 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.285 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.286 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.291 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.292 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.293 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.298 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.298 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.300 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.304 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.305 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.306 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.310 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.310 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.312 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.317 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.317 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.318 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.323 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.323 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.325 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.329 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.329 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.331 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.335 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.336 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.337 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.342 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.342 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.343 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.348 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.348 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.350 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.355 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.355 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.356 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.361 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.361 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.362 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.367 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.367 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.369 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.374 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.374 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.376 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.406 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.406 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.409 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.414 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.414 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.415 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.420 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.420 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.421 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.426 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.426 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.429 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.434 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.434 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.435 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.440 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.440 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.441 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.446 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.446 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.447 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.452 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.452 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.454 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.459 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.459 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.460 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.465 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.465 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.466 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.471 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.471 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.472 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.477 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.477 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.479 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.484 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.484 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.485 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.490 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.490 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.491 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.496 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.496 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.497 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.502 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.502 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.504 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.508 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.508 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.510 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.514 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.514 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.516 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.521 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.521 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.522 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.527 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.527 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.529 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.534 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.534 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.535 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.540 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.540 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.541 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.546 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.546 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.548 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.552 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.553 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.555 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.560 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.560 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.561 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.565 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.566 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.567 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.572 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.572 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.573 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.578 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.579 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.580 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.585 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.585 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.587 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.591 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.591 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.593 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.598 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.598 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.599 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.604 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.605 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.607 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.611 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.612 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.613 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.617 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.618 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.619 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.624 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.624 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.625 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.630 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.630 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.632 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.637 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.637 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.638 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.643 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.643 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.644 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.649 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.649 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.650 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.655 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.655 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.657 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.661 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.661 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.663 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.667 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.668 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.669 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.674 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.674 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.675 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.680 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.680 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.682 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.687 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.687 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.688 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.693 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.693 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.694 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.699 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.699 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.700 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.705 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.705 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.707 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.711 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.711 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.713 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.717 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.717 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.719 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.723 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.723 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.725 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.729 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.729 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.731 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.736 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.736 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.738 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.743 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.743 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.744 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.749 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.749 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.750 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.756 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.756 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.758 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.762 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.763 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.764 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.769 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.769 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.771 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.777 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.778 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.779 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.785 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.785 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.788 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.793 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.793 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.794 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.799 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.799 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.801 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.806 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.807 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.808 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.813 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.814 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.816 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.820 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.820 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.822 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.827 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.827 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.828 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.834 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.834 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.835 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.840 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.840 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.842 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.847 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.847 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.849 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.854 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.854 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.856 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.860 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.860 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.862 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.866 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.866 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.868 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.873 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.873 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.875 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.879 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.879 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.881 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.885 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.886 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.887 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.892 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.892 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.894 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.898 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.898 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.900 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.904 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.904 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.906 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.910 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.910 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.912 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.916 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.916 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.918 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.923 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.923 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.925 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.929 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.929 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.930 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.935 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.935 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.936 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.941 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.941 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.943 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.947 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.947 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.949 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.954 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.954 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.955 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.960 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==>  Preparing: SELECT * FROM tb_categories where id = ? 
+2019-06-14 17:51:57.960 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : ==> Parameters: 1(Integer)
+2019-06-14 17:51:57.961 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findById  : <==      Total: 1
+2019-06-14 17:51:57.966 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==>  Preparing: INSERT INTO tb_articles (title,category_id,author,description,thumbnail) VALUES (?,?, ?, ?, ?) 
+2019-06-14 17:51:57.966 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : ==> Parameters: Love is in the air(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String)
+2019-06-14 17:51:57.968 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.ArticleRepository.add        : <==    Updates: 1
+2019-06-14 17:51:57.974 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.974 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.975 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.980 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:51:57.980 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:51:57.982 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:51:57.988 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:51:57.988 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:51:57.990 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 3
+2019-06-14 17:51:58.002 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:51:58.002 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:51:58.004 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:51:58.009 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:51:58.009 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 1(Integer), 10(Integer)
+2019-06-14 17:51:58.011 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:51:58.017 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:51:58.017 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:51:58.020 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:51:58.025 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:51:58.025 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:51:58.026 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 3
+2019-06-14 17:52:00.094 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:52:00.095 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:52:00.096 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:52:00.101 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:52:00.101 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 3(Integer), 10(Integer)
+2019-06-14 17:52:00.103 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:52:00.108 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:52:00.108 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:52:00.110 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:52:00.114 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:52:00.114 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:52:00.115 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 3
+2019-06-14 17:52:01.784 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:52:01.784 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:52:01.786 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:52:01.790 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:52:01.790 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 3(Integer), 10(Integer)
+2019-06-14 17:52:01.792 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:52:01.796 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:52:01.796 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:52:01.797 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:52:01.802 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:52:01.802 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:52:01.803 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 3
+2019-06-14 17:52:03.881 DEBUG 18711 --- [http-nio-8080-exec-4] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:52:03.881 DEBUG 18711 --- [http-nio-8080-exec-4] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:52:03.882 DEBUG 18711 --- [http-nio-8080-exec-4] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:52:03.886 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:52:03.886 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 3(Integer), 10(Integer)
+2019-06-14 17:52:03.888 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:52:03.892 DEBUG 18711 --- [http-nio-8080-exec-4] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:52:03.892 DEBUG 18711 --- [http-nio-8080-exec-4] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:52:03.894 DEBUG 18711 --- [http-nio-8080-exec-4] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:52:03.898 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:52:03.898 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:52:03.899 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 3
+2019-06-14 17:52:06.261 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:52:06.261 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:52:06.263 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:52:06.267 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:52:06.267 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 2(Integer), 10(Integer)
+2019-06-14 17:52:06.269 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:52:06.273 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:52:06.273 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:52:06.274 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:52:06.278 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:52:06.278 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:52:06.280 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 3
+2019-06-14 17:52:09.070 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:52:09.070 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:52:09.072 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:52:09.076 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:52:09.077 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 3(Integer), 10(Integer)
+2019-06-14 17:52:09.078 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:52:09.082 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:52:09.082 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:52:09.084 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:52:09.088 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:52:09.088 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:52:09.089 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 3
+2019-06-14 17:52:16.174 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:52:16.174 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:52:16.175 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:52:16.180 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:52:16.180 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:52:16.181 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:52:16.186 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:52:16.186 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:52:16.187 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 3
+2019-06-14 17:52:23.017 DEBUG 18711 --- [http-nio-8080-exec-8] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:52:23.017 DEBUG 18711 --- [http-nio-8080-exec-8] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:52:23.018 DEBUG 18711 --- [http-nio-8080-exec-8] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:52:23.023 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:52:23.023 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 3(Integer), 10(Integer)
+2019-06-14 17:52:23.025 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:52:23.030 DEBUG 18711 --- [http-nio-8080-exec-8] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:52:23.030 DEBUG 18711 --- [http-nio-8080-exec-8] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:52:23.031 DEBUG 18711 --- [http-nio-8080-exec-8] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:52:23.036 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:52:23.036 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:52:23.037 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 3
+2019-06-14 17:52:26.052 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:52:26.052 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:52:26.053 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:52:26.058 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:52:26.058 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 3(Integer), 10(Integer)
+2019-06-14 17:52:26.060 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:52:26.064 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:52:26.065 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:52:26.066 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:52:26.071 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:52:26.071 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:52:26.072 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 3
+2019-06-14 17:52:28.704 DEBUG 18711 --- [http-nio-8080-exec-10] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:52:28.704 DEBUG 18711 --- [http-nio-8080-exec-10] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:52:28.706 DEBUG 18711 --- [http-nio-8080-exec-10] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:52:28.710 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:52:28.710 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 3(Integer), 10(Integer)
+2019-06-14 17:52:28.712 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:52:28.717 DEBUG 18711 --- [http-nio-8080-exec-10] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:52:28.717 DEBUG 18711 --- [http-nio-8080-exec-10] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:52:28.718 DEBUG 18711 --- [http-nio-8080-exec-10] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:52:28.723 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:52:28.723 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:52:28.724 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 3
+2019-06-14 17:52:29.945 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:52:29.945 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:52:29.947 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:52:29.952 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:52:29.952 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 3(Integer), 10(Integer)
+2019-06-14 17:52:29.954 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:52:29.959 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:52:29.959 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:52:29.961 DEBUG 18711 --- [http-nio-8080-exec-1] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:52:29.966 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:52:29.966 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:52:29.967 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 3
+2019-06-14 17:52:33.232 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:52:33.232 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:52:33.233 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:52:33.238 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:52:33.238 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 2(Integer), 10(Integer)
+2019-06-14 17:52:33.239 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:52:33.243 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:52:33.243 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:52:33.245 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:52:33.249 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:52:33.249 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:52:33.250 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 3
+2019-06-14 17:58:40.366 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:58:40.366 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:58:40.368 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:58:40.372 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.A.nextArticleId              : ==>  Preparing: SELECT max(id) from tb_articles 
+2019-06-14 17:58:40.372 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.A.nextArticleId              : ==> Parameters: 
+2019-06-14 17:58:40.374 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.A.nextArticleId              : <==      Total: 1
+2019-06-14 17:58:40.378 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:58:40.378 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:58:40.379 DEBUG 18711 --- [http-nio-8080-exec-4] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 3
+2019-06-14 17:58:41.319 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:58:41.319 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:58:41.321 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:58:41.325 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:58:41.326 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 2(Integer), 10(Integer)
+2019-06-14 17:58:41.328 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:58:41.332 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:58:41.332 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:58:41.334 DEBUG 18711 --- [http-nio-8080-exec-5] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:58:41.338 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:58:41.338 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:58:41.340 DEBUG 18711 --- [http-nio-8080-exec-5] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 3
+2019-06-14 17:58:44.978 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:58:44.978 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:58:44.980 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:58:44.985 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:58:44.985 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: 10(Integer), 1(Integer), 10(Integer)
+2019-06-14 17:58:44.987 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:58:44.991 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id 
+2019-06-14 17:58:44.991 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: 
+2019-06-14 17:58:44.993 DEBUG 18711 --- [http-nio-8080-exec-6] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:58:44.997 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:58:44.997 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:58:44.998 DEBUG 18711 --- [http-nio-8080-exec-6] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 3
+2019-06-14 17:58:48.120 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%') 
+2019-06-14 17:58:48.120 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: kaka(String)
+2019-06-14 17:58:48.122 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:58:48.127 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%') ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:58:48.127 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: kaka(String), 10(Integer), 1(Integer), 10(Integer)
+2019-06-14 17:58:48.129 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.A.viewPagination             : <==      Total: 0
+2019-06-14 17:58:48.133 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%') 
+2019-06-14 17:58:48.133 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: kaka(String)
+2019-06-14 17:58:48.135 DEBUG 18711 --- [http-nio-8080-exec-7] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:58:48.140 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:58:48.140 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:58:48.141 DEBUG 18711 --- [http-nio-8080-exec-7] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 3
+2019-06-14 17:58:52.684 DEBUG 18711 --- [http-nio-8080-exec-8] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:58:52.684 DEBUG 18711 --- [http-nio-8080-exec-8] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: kaka(String), 1(Integer)
+2019-06-14 17:58:52.686 DEBUG 18711 --- [http-nio-8080-exec-8] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:58:52.691 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:58:52.691 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: kaka(String), 1(Integer), 10(Integer), 1(Integer), 10(Integer)
+2019-06-14 17:58:52.693 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.A.viewPagination             : <==      Total: 0
+2019-06-14 17:58:52.698 DEBUG 18711 --- [http-nio-8080-exec-8] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:58:52.698 DEBUG 18711 --- [http-nio-8080-exec-8] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: kaka(String), 1(Integer)
+2019-06-14 17:58:52.700 DEBUG 18711 --- [http-nio-8080-exec-8] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:58:52.705 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:58:52.705 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:58:52.706 DEBUG 18711 --- [http-nio-8080-exec-8] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 3
+2019-06-14 17:58:55.965 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:58:55.965 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: love(String), 1(Integer)
+2019-06-14 17:58:55.967 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:58:55.971 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:58:55.971 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: love(String), 1(Integer), 10(Integer), 1(Integer), 10(Integer)
+2019-06-14 17:58:55.973 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:58:55.978 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:58:55.978 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: love(String), 1(Integer)
+2019-06-14 17:58:55.980 DEBUG 18711 --- [http-nio-8080-exec-9] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:58:55.984 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:58:55.984 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:58:55.985 DEBUG 18711 --- [http-nio-8080-exec-9] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 3
+2019-06-14 17:59:00.688 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.findOneById                : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.id = ?) 
+2019-06-14 17:59:00.688 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.findOneById                : ==> Parameters: 1(Integer)
+2019-06-14 17:59:00.690 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.A.findOneById                : <==      Total: 1
+2019-06-14 17:59:00.695 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:59:00.695 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:59:00.696 DEBUG 18711 --- [http-nio-8080-exec-10] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 3
+2019-06-14 17:59:03.474 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.A.findOneById                : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.id = ?) 
+2019-06-14 17:59:03.474 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.A.findOneById                : ==> Parameters: 1(Integer)
+2019-06-14 17:59:03.475 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.A.findOneById                : <==      Total: 1
+2019-06-14 17:59:03.480 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.ArticleRepository.update     : ==>  Preparing: UPDATE tb_articles SET title=?, category_id=?, author=?,description=?,thumbnail=? WHERE (id = ?) 
+2019-06-14 17:59:03.480 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.ArticleRepository.update     : ==> Parameters: kaka(String), 1(Integer), Kong vungsovanreach(String), This is the most popular book that was just kidding(String), democover.png(String), 1(Integer)
+2019-06-14 17:59:03.482 DEBUG 18711 --- [http-nio-8080-exec-1] c.k.b.h.r.A.ArticleRepository.update     : <==    Updates: 1
+2019-06-14 17:59:03.492 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:59:03.492 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: love(String), 1(Integer)
+2019-06-14 17:59:03.494 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:59:03.499 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:59:03.499 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: love(String), 1(Integer), 10(Integer), 1(Integer), 10(Integer)
+2019-06-14 17:59:03.501 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.A.viewPagination             : <==      Total: 10
+2019-06-14 17:59:03.505 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:59:03.506 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: love(String), 1(Integer)
+2019-06-14 17:59:03.507 DEBUG 18711 --- [http-nio-8080-exec-2] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:59:03.512 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:59:03.512 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:59:03.513 DEBUG 18711 --- [http-nio-8080-exec-2] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 3
+2019-06-14 17:59:06.212 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:59:06.212 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: kaka(String), 1(Integer)
+2019-06-14 17:59:06.214 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:59:06.218 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.A.viewPagination             : ==>  Preparing: SELECT a.id as article_id,a.title,a.category_id,a.author,a.description,a.thumbnail,c.title as category_title FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) ORDER BY a.id limit ? OFFSET (?-1)*? 
+2019-06-14 17:59:06.219 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.A.viewPagination             : ==> Parameters: kaka(String), 1(Integer), 10(Integer), 1(Integer), 10(Integer)
+2019-06-14 17:59:06.221 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.A.viewPagination             : <==      Total: 1
+2019-06-14 17:59:06.225 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==>  Preparing: SELECT COUNT(*) FROM tb_articles as a INNER JOIN tb_categories as c ON a.category_id = c.id WHERE (a.title ilike '%'||?||'%' AND a.category_id = ?) 
+2019-06-14 17:59:06.225 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : ==> Parameters: kaka(String), 1(Integer)
+2019-06-14 17:59:06.227 DEBUG 18711 --- [http-nio-8080-exec-3] k.b.h.r.A.A.findTotalRecordForPagination : <==      Total: 1
+2019-06-14 17:59:06.232 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.CategoryRepository.findAll   : ==>  Preparing: SELECT * FROM tb_categories ORDER BY id 
+2019-06-14 17:59:06.232 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.CategoryRepository.findAll   : ==> Parameters: 
+2019-06-14 17:59:06.233 DEBUG 18711 --- [http-nio-8080-exec-3] c.k.b.h.r.A.CategoryRepository.findAll   : <==      Total: 3

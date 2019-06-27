@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/main-layout}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{btn.view}">Title</title>
+    <th:block th:insert="fragment/style"></th:block>
+    <th:block th:insert="fragment/script"></th:block>
+    <style>
+        td:first-child{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div layout:fragment="main-content">
+        <div class="col m8 offset-m2">
+            <br>
+            <a style="margin-bottom: 20px;" th:href="@{/viewall(page=${page})}"><input type="button" th:value="#{btn.back}" value="Go back" class="btn btn-primary"></a>
+            <table class="table" th:object="${article}">
+                <tr>
+                    <td th:text="#{article.id}">ID</td>
+                    <td th:text="*{id}"></td>
+                </tr>
+                <tr>
+                    <td th:text="#{article.title}">Title</td>
+                    <td th:text="*{title}"></td>
+                </tr>
+                <tr>
+                    <td th:text="#{article.category}">Title</td>
+                    <td th:text="*{category.title}"></td>
+                </tr>
+                <tr>
+                    <td th:text="#{article.author}">Author</td>
+                    <td th:text="*{author}"></td>
+                </tr>
+                <tr>
+                    <td th:text="#{article.description}">Description</td>
+                    <td th:text="*{description}"></td>
+                </tr>
+            </table>
+            <img th:src="'/img/'+${article.thumbnail}" alt="" width="100%">
+        </div>
+    </div>
+</body>
+</html>

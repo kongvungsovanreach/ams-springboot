@@ -1,0 +1,24 @@
+<table class="table" th:fragment="table">
+    <tr>
+        <th width="5%" th:text="#{article.id}">ID</th>
+        <th width="15%" th:text="#{article.title}">Title</th>
+        <th width="10%" th:text="#{article.author}">Author</th>
+        <th width="15%" th:text="#{article.category}">Category</th>
+        <th width="20%" th:text="#{article.description}">Description</th>
+        <th width="10%" th:text="#{article.thumbnail}">Thumbnail</th>
+        <th width="25%" th:text="#{article.action}">Action</th>
+    </tr>
+    <tr th:each="article:${articles}" th:object="${article}">
+        <td th:text="*{id}"></td>
+        <td th:text="*{title}"></td>
+        <td th:text="*{category.title}">Science</td>
+        <td th:text="*{author}"></td>
+        <td th:text="*{description}"></td>
+        <td><img th:src="'/img/'+ *{thumbnail}" th:alt="*{thumbnail}" width="100px" height="70px"></td>
+        <td>
+            <a th:href="@{/view/{id}(id=${article.id})}"><input type="button" th:value="#{btn.view}" class="btn btn-primary"></a>
+            <a th:href="@{/update/{id}(id=${article.id})}"><input type="button" th:value="#{btn.update}" class="btn btn-success"></a>
+            <a th:href="@{/delete/{id}(id=${article.id})}"><input type="button" th:value="#{btn.delete}" class="btn btn-danger"></a>
+        </td>
+    </tr>
+</table>

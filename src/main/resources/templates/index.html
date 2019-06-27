@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/main-layout}">
+<head>
+    <meta charset="UTF-8" />
+    <title th:text="#{article.managment.system}">Article Management</title>
+    <th:block th:insert="fragment/style"></th:block>
+    <th:block th:insert="fragment/script"></th:block>
+</head>
+<body>
+    <div layout:fragment="main-content">
+        <br>
+        <form action="">
+            <div class="col m6">
+                <a href="/add"><input type="button" th:value="#{btn.add}" class="btn btn-primary" name="sdfdsf"></a>
+            </div>
+            <div th:class="${#lists.size(categories) == 0}?'col m5':'col m3'">
+                <input type="text" class="form-control" placeholder="Search your article!" th:field = "${filter.title}">
+            </div>
+            <div class="col m2" th:unless="${#lists.size(categories)==0}">
+                <select name="cateId" th:field = "${filter.cateId}">
+                    <option value="0" selected th:text="#{choose.category}"></option>
+                    <option th:each="category : ${categories}" th:object="${category}" th:value="*{id}" th:text="*{title}">label</option>
+                </select>
+            </div>
+            <div class="col m1">
+                <input type="submit" value="Search" class="btn" >
+            </div>
+        </form>
+        <table class="table">
+            <tr>
+                <th width="5%" th:text="#{article.id}">ID</th>
+                <th width="15%" th:text="#{article.title}">Title</th>
+                <th width="10%" th:text="#{article.author}">Author</th>
+                <th width="15%" th:text="#{article.category}">Category</th>
+                <th width="20%" th:text="#{article.description}">Description</th>
+                <th width="10%" th:text="#{article.thumbnail}">Thumbnail</th>
+                <th width="25%" th:text="#{article.action}">Action</th>
+            </tr>
+            <tr th:each="article:${articles}" th:object="${article}">
+                <td th:text="*{id}"></td>
+                <td th:text="*{title}"></td>
+                <td th:text="*{category.title}">Science</td>
+                <td th:text="*{author}"></td>
+                <td th:text="*{description}"></td>
+                <td><img th:src="'/img/'+ *{thumbnail}" th:alt="*{thumbnail}" width="100px" height="70px"></td>
+                <td>
+                    <a th:href="@{/view/{id}(id=${article.id})}"><input type="button" th:value="#{btn.view}" class="btn btn-primary"></a>
+                    <a th:href="@{/update/{id}(id=${article.id})}"><input type="button" th:value="#{btn.update}" class="btn btn-success"></a>
+                    <a th:href="@{/delete/{id}(id=${article.id})}"><input type="button" th:value="#{btn.delete}" class="btn btn-danger"></a>
+                </td>
+            </tr>
+        </table>
+        <nav id="pagination" aria-label="Page navigation" th:if="${paging.totalRecord}>10">
+            <ul class="pagination">
+
+                <th:block th:with="start=${paging.startShowPage},end=${paging.endShowPage}"   >
+                    <th:block th:if="*{end>1}">
+                        <li style="margin-left: 20px;"><a th:href="@{/viewall(page=${paging.firstPage})}"><span aria-hidden="true">First</span></a></li>
+                        <li><a th:href="@{/viewall(page=${paging.previousPage})}"><span aria-hidden="true">&laquo;</span></a></li>
+                        <li th:each="page:${#numbers.sequence(start,end)}" th:class="*{page}==${paging.currentPage}?active"><a th:href="@{/viewall(page=${page})}" th:text="*{page}">1</a></li>
+                        <li><a th:href="@{/viewall(page=${paging.nextPage})}"> <span aria-hidden="true">&raquo;</span></a></li>
+                        <li><a th:href="@{/viewall(page=${paging.lastPage})}"> <span aria-hidden="true">Last</span></a></li>
+                        <li style="float: right; margin-right: 20px;"><label  th:text="#{total.article}"></label><label style="color: red;" for="totalrecord" th:text="' '+${articleCount}"></label></li>
+                    </th:block>
+                </th:block>
+            </ul>
+        </nav>
+        <center>
+            <div th:if="${articleCount}==0">
+                <h1 th:text="#{ot.mean.article}">Ot mean article te brader.</h1>
+                <h2 th:text="#{insert.mouy.tov}">Insert mouy tov!</h2>
+            </div>
+        </center>
+    </div>
+    </body>
+</html>

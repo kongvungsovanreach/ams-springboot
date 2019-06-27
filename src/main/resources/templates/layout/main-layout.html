@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:th="http://www.thymeleaf.org"
+                xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <meta charset="UTF-8">
+        <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE"></title>
+        <th:block th:insert="fragment/style"></th:block>
+        <th:block th:insert="fragment/script"></th:block>
+        <title>AMS</title>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col m10 offset-m1">
+                <div class="col m12" th:replace="fragment/navbar::navbar"></div>
+                <div class="col m12" layout:fragment="main-content" id="main-content"></div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col m10 offset-m1">
+                <footer th:replace="fragment/footer::footer"></footer>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $(".dropdown-trigger").dropdown();
+            })
+        </script>
+        <script layout:fragment="main-script"></script>
+    </body>
+</html>
