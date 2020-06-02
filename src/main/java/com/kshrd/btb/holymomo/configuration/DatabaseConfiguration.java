@@ -14,16 +14,16 @@ import javax.validation.Valid;
 
 @Configuration
 public class DatabaseConfiguration {
-    @Value("${database.host}")
-    String DATABASE_HOST;
-    @Value("${database.port}")
-    String DATABASE_PORT;
-    @Value("${database.name}")
-    String DATABASE_NAME;
-    @Value("${database.username}")
-    String DATABASE_USERNAME;
-    @Value("${database.password}")
-    String DATABASE_PASSWORD;
+//    @Value("${database.host}")
+//    String DATABASE_HOST;
+//    @Value("${database.port}")
+//    String DATABASE_PORT;
+//    @Value("${database.name}")
+//    String DATABASE_NAME;
+//    @Value("${database.username}")
+//    String DATABASE_USERNAME;
+//    @Value("${database.password}")
+//    String DATABASE_PASSWORD;
 
     @Bean
     @Profile("localDB")
@@ -36,16 +36,16 @@ public class DatabaseConfiguration {
         return dataSource;
     }
 
-    @Bean
-    @Profile("serverDB")
-    DataSource serverDatabase(){
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://"+DATABASE_HOST+":"+DATABASE_PORT+"/"+DATABASE_NAME);
-        dataSource.setUsername(DATABASE_USERNAME);
-        dataSource.setPassword(DATABASE_PASSWORD);
-        return dataSource;
-    }
+//    @Bean
+//    @Profile("serverDB")
+//    DataSource serverDatabase(){
+//        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//        dataSource.setDriverClassName("org.postgresql.Driver");
+//        dataSource.setUrl("jdbc:postgresql://"+DATABASE_HOST+":"+DATABASE_PORT+"/"+DATABASE_NAME);
+//        dataSource.setUsername(DATABASE_USERNAME);
+//        dataSource.setPassword(DATABASE_PASSWORD);
+//        return dataSource;
+//    }
 
     @Bean
     @Profile("memory")
